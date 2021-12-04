@@ -1,0 +1,6 @@
+<div class="score" style="@_scoreCSS"></div>
+@code {
+  [Parameter] public ScoreModel Model { get; set; }
+  string _scoreCSS => $"background-image: url('../images/{Model.scoreDigit}.png')";
+  
+}
