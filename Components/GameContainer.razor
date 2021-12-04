@@ -3,17 +3,29 @@
 <div class="border-left"></div>
 <div class="game-container" tabindex="0" @onclick="_gameManager.StartGame" @onkeyup="HandleKeyUp">
   <div class="border-top"></div>
+  
   <div class="sky">
+
+    <Bird Model="_gameManager.Bird" />
+    
     @foreach (var score in _gameManager.Scores) {
       <Score Model="score" />
     }
-    <Bird Model="_gameManager.Bird" />
+
+    @foreach (var gameover in _gameManager.GameOvers) {
+      <GameOver Model="gameover" />
+    }
   </div>
+  
   <div class="ground"></div>
 
   @foreach (var pipe in _gameManager.Pipes) {
-      <Pipe Model="pipe" />
+    <Pipe Model="pipe" />
   }
+  <div>
+    
+  </div>
+  
 </div>
 <div class="border-right"></div>
 
@@ -21,7 +33,7 @@
   GameManager _gameManager;
   protected override void OnInitialized() {
     _gameManager = new GameManager();
-    _gameManager.MainLoopCompleted += (o,e) => StateHasChanged(); 
+    _gameManager.loopCompleted += (o,e) => StateHasChanged(); 
   }
   void HandleKeyUp(KeyboardEventArgs e) {
     if (e.Key == " ") { 

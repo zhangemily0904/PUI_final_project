@@ -195,11 +195,11 @@
       "mscorlib.dll": "sha256-7WjHY56PbksCp7YOxNV59r6MqLujjAH8vhnMJ+zVezY=",
       "netstandard.dll": "sha256-5TcSqPhm3fAT6s3NH7+BMGakcfGgZGd3\/\/cVwVs2VPI=",
       "System.Private.CoreLib.dll": "sha256-VJv3DLM\/G0m\/RnTeWL9X8mkbxlsn8nNRhm0BHYEY+uo=",
-      "BlazorApp.dll": "sha256-e9CqIEbeKRTS2FCREff9oJaHJ29MFGH6K+XvRNV71tA="
+      "BlazorApp.dll": "sha256-BzUgG598lIcmVf5HQnp4walIj13yEAo\/eoyRrz9sAHw="
     },
     "lazyAssembly": null,
     "pdb": {
-      "BlazorApp.pdb": "sha256-6qdK1D\/99PKlwJgtUe20dE6cnqh8503oFJQaM41Ns9Y="
+      "BlazorApp.pdb": "sha256-UunrR3pCsIwZfkwgNyvKEz+Ty2SE3jegBBKhS5jEb8Q="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-PvlHrby1PYtdX46ITs6pB8iDNqXNcewh8Eoa\/Gm2+GM=",

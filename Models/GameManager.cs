@@ -8,52 +8,52 @@ namespace BlazorApp.Models
 {
   public class GameManager
   {
-    private readonly int _gravity = 2;
+    private readonly int gravity = 2;
     public int previousScore = 0;
     public int score = 0;
-    public event EventHandler MainLoopCompleted;
+    public event EventHandler loopCompleted;
     public BirdModel Bird { get; private set; }
     public List<PipeModel> Pipes { get; private set; }
     public List<ScoreModel> Scores { get; private set; }
-    public bool IsRunning { get; private set; } = false;
+    public List<GameOverModel> GameOvers { get; private set; }
+    public bool isRunning { get; private set; } = false;
     public GameManager() {
       Bird = new BirdModel();
       Pipes = new List<PipeModel>();
       Scores = new List<ScoreModel>();
+      GameOvers = new List<GameOverModel>();
     }
 
     public async void MainLoop() {
-      IsRunning = true;
-      while (IsRunning) {
-        MoveObjects();
-        CheckForCollisions();
-        ManagePipes();
+      isRunning = true;
+      while (isRunning) {
+        move();
+        checkCollisions();
+        managePipes();
 
-        MainLoopCompleted?.Invoke(this, EventArgs.Empty);
+        loopCompleted?.Invoke(this, EventArgs.Empty);
         await Task.Delay(20);
       }
     }
 
     public void StartGame() {
-      if (!IsRunning) {
+      if (!isRunning) {
         Bird = new BirdModel();
         Pipes = new List<PipeModel>();
         Scores = new List<ScoreModel>();
         Scores.Add(new ScoreModel(0));
+        GameOvers = new List<GameOverModel>();
         MainLoop();
       }
     }
 
     public void Jump() {
-      if (IsRunning) {
+      if (isRunning) {
         Bird.Jump();
       }
     }
 
-    void ManagePipes() {
-      // if (Pipes.Last().DistanceFromLeft <= 200) {
-      //   manageScore();
-      // }
+    void managePipes() {
 
       if (!Pipes.Any() || Pipes.Last().DistanceFromLeft <= 250) {
         Pipes.Add(new PipeModel());
@@ -69,14 +69,14 @@ namespace BlazorApp.Models
       
     }
 
-    public void MoveObjects() {
-      Bird.Fall(_gravity);
+    public void move() {
+      Bird.Fall(gravity);
         foreach(var pipe in Pipes) {
           pipe.Move();
         }
     }
 
-    public void CheckForCollisions() {
+    public void checkCollisions() {
       if (Bird.IsOnGround()) {
           GameOver();
       }
@@ -85,13 +85,19 @@ namespace BlazorApp.Models
         bool hasCollidedWithBottom = Bird.DistanceFromGround < centeredPipe.GapBottom - 150;
         bool hasCollidedWithTop = Bird.DistanceFromGround + 45 > centeredPipe.GapTop - 150;
         if (hasCollidedWithBottom || hasCollidedWithTop) {
+          while (!Bird.IsOnGround()) {
+            Bird.Fall(gravity);
+          }
           GameOver();
         } 
       }
     }
 
     public void GameOver() {
-      IsRunning = false;
+      Pipes.Remove(Pipes.Last());
+      GameOvers.Add(new GameOverModel());
+      isRunning = false;
+      
     }
 
     private void manageScore()

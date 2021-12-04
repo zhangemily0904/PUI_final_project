@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/emilyzhang/Desktop/BlazorApp/BlazorApp.csproj": {}
+    "/Users/emilyzhang/Desktop/PUI_final_project/BlazorApp.csproj": {}
   },
   "projects": {
-    "/Users/emilyzhang/Desktop/BlazorApp/BlazorApp.csproj": {
+    "/Users/emilyzhang/Desktop/PUI_final_project/BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/emilyzhang/Desktop/BlazorApp/BlazorApp.csproj",
+        "projectUniqueName": "/Users/emilyzhang/Desktop/PUI_final_project/BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "/Users/emilyzhang/Desktop/BlazorApp/BlazorApp.csproj",
+        "projectPath": "/Users/emilyzhang/Desktop/PUI_final_project/BlazorApp.csproj",
         "packagesPath": "/Users/emilyzhang/.nuget/packages/",
-        "outputPath": "/Users/emilyzhang/Desktop/BlazorApp/obj/",
+        "outputPath": "/Users/emilyzhang/Desktop/PUI_final_project/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/emilyzhang/.nuget/NuGet/NuGet.Config"

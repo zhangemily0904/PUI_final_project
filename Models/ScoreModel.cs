@@ -11,6 +11,5 @@ namespace BlazorApp.Models
         scoreDigit = score;
       }
       
-
     }
 }

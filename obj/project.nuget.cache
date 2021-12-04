@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cXJfcmgVGdWWns/pf60B8XtAovRhPKMgs2X201Ycfbw1pAV37phAYIXZzxuz9QNTTjLi0OgIrA+D5J9ZwCVDRA==",
+  "dgSpecHash": "vhHLo0nEdtthev9v+PuK+RqnpRcHFTADtMR7jJr02GVhHQ9PuwZF8FJMAcpUdhef4OJ52jHgHGiABjfKmV8UKg==",
   "success": true,
-  "projectFilePath": "/Users/emilyzhang/Desktop/BlazorApp/BlazorApp.csproj",
+  "projectFilePath": "/Users/emilyzhang/Desktop/PUI_final_project/BlazorApp.csproj",
   "expectedPackageFiles": [
     "/Users/emilyzhang/.nuget/packages/microsoft.aspnetcore.authorization/5.0.10/microsoft.aspnetcore.authorization.5.0.10.nupkg.sha512",
     "/Users/emilyzhang/.nuget/packages/microsoft.aspnetcore.components/5.0.10/microsoft.aspnetcore.components.5.0.10.nupkg.sha512",

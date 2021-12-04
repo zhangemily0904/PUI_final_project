@@ -1,0 +1,5 @@
+<div class="gameover" style="@_gameoverCSS"></div>
+@code {
+  [Parameter] public GameOverModel Model { get; set; }
+  string _gameoverCSS = $"background-image: url('../images/gameover.png'); background-repeat: no-repeat; width: 200px; left: 160px; height: 250px; position: absolute";
+}
